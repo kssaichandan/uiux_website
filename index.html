@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Personal App</title>
+  <meta name="description" content="Notes, habits, calendar, calculator and life tracker — works offline, data stays on your device.">
+  <meta name="theme-color" content="#f8f9ff">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <nav id="nav" class="nav" aria-label="Main"></nav>
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+  <div id="layer-host"></div>
+  <div id="snackbar-host" class="snackbar-host" aria-live="polite"></div>
+  <noscript><p style="padding:24px;font-family:sans-serif">Personal App needs JavaScript turned on.</p></noscript>
+
+  <script src="js/icons.js"></script>
+  <script src="js/m3.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/delta.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/notify.js"></script>
+  <script src="js/views/notes.js"></script>
+  <script src="js/views/habits.js"></script>
+  <script src="js/views/calendar.js"></script>
+  <script src="js/views/calculator.js"></script>
+  <script src="js/views/life.js"></script>
+  <script src="js/views/settings.js"></script>
+  <script src="js/views/onboarding.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
