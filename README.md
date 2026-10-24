@@ -41,7 +41,7 @@ data with the phone app through a backup file (see
 browser and works straight away, even with no internet.
 
 **Option 2 — open it from a web address.** Put this folder on any static
-web host (for example Vercel, Netlify or GitHub Pages) and open the `https://`
+web host (for example Render, Netlify or GitHub Pages) and open the `https://`
 address. After the first visit the site saves a copy of itself, so it still
 opens when you are offline. Your browser may also offer to **install it as an
 app** so it gets its own window and icon.
@@ -616,18 +616,19 @@ The backup file uses the same format as the Personal App phone app.
 
 This is a static site: there is no build step. Any static host works.
 
-**Vercel**
+**Render**
 
-1. Import this repository at <https://vercel.com/new>.
-2. Leave the framework preset as **Other**, with no build command and the
-   output directory as the project root.
-3. Deploy.
+The repository includes a `render.yaml` file, so Render can set everything up
+for you.
 
-Or from the command line, inside this folder:
+1. Go to <https://dashboard.render.com> and choose **New → Blueprint**.
+2. Connect this GitHub repository and click **Apply**.
+3. Render publishes the site and gives you an `onrender.com` address.
 
-```bash
-npx vercel --prod
-```
+Or set it up by hand: choose **New → Static Site**, pick this repository,
+leave **Build Command** empty and set **Publish Directory** to `.`.
+
+Every new push to the `main` branch updates the live site automatically.
 
 **Updating a deployed copy.** If you change any file, also change `VERSION`
 in `sw.js` (for example `personal-app-web-v1` → `personal-app-web-v2`).
@@ -642,7 +643,7 @@ version.
 index.html               the page itself
 manifest.webmanifest     app name, icons and shortcuts for installing
 sw.js                    saves the site for offline use (only on http/https)
-vercel.json              hosting settings for Vercel
+render.yaml              hosting settings for Render
 css/app.css              all of the styling
 js/icons.js              the icons used in the app (Material Symbols, Apache 2.0)
 js/m3.js                 builds the colour scheme from the accent colour
@@ -661,9 +662,3 @@ js/views/onboarding.js   first-time welcome tour
 js/app.js                navigation between sections and start-up
 icons/                   app icons
 ```
-
----
-
-## Author
-
-[kssaichandan](https://github.com/kssaichandan)
